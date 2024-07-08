@@ -18,6 +18,12 @@
 #set cite(style: "chicago-author-date")
 #show link: underline
 
+
+// For Japanese
+// #set text(font: "Noto Serif CJK JP", lang: "ja")
+// #show regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"): set text(font: "Noto Serif CJK JP", lang: "ja")
+
+
 = Introduction
 #lorem(60)
 
