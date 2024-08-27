@@ -1,13 +1,9 @@
 tasks:
   - init: |
       brew install typst
-      brew tap homebrew/linux-fonts
-      brew install font-noto-serif-cjk font-noto-sans-cjk 
-      ln -sf /home/linuxbrew/.linuxbrew/share/fonts -t ~/.local/share
-      fc-cache -f
+      apt-get update
+      apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
 
 vscode:
   extensions:
     - myriad-dreamin.tinymist
-    # - mgt19937.typst-preview
-    - anwar.papyrus-pdf
