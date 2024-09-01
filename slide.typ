@@ -1,4 +1,5 @@
 #import "@preview/touying:0.4.2": *
+#import "@preview/tiaoma:0.2.0": qrcode
 
 // For Japanese
 // #set text(font: "Noto Serif CJK JP", lang: "ja")
@@ -32,6 +33,16 @@
 = Section A
 
 == Subsection A.1
+
+#slide[
+  #set align(center)
+  This slide is available at \
+  `https://github.com/tani/gitpod-typst`
+  #qrcode(
+    "https://github.com/tani/gitpod-typst",
+    options: (scale: 4.0)
+  )
+]
 
 #slide[
   A slide with equation:
