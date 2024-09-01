@@ -5,4 +5,5 @@ tasks:
 
 vscode:
   extensions:
-    - myriad-dreamin.tinymist
+    # - myriad-dreamin.tinymist
+    - https://filedn.eu/lsAWkVJjPybSJu4FXPf6Oy8/tinymist-0.11.20.vsix
