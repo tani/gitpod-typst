@@ -1,34 +1,29 @@
-#import "@preview/touying:0.4.2": *
-#import "@preview/tiaoma:0.2.0": qrcode
+#import "@preview/touying:0.5.2": *
+#import themes.stargazer: *
+#import "@preview/tiaoma:0.2.0": *
+
+#import "@preview/numbly:0.1.0": numbly
+
+#show: stargazer-theme.with(
+  aspect-ratio: "16-9",
+  config-info(
+    title: [Lorem Ipsum],
+    subtitle: [dolor sit amet, consectetur adipiscing elit],
+    author: [sed do eiusmod],
+    date: datetime.today(),
+    institution: [tempor incididunt ut labore]
+  ),
+)
 
 // For Japanese
 // #set text(font: "Noto Serif CJK JP", lang: "ja")
 #show regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]"): set text(font: "Noto Serif CJK JP", lang: "ja")
 
-#let s = themes.dewdrop.register(
-  aspect-ratio: "16-9",
-  footer: [Dewdrop],
-  navigation: "mini-slides",
-  primary: rgb("#0c4842"),
-  // navigation: none,
-)
+#set heading(numbering: numbly("{1}.", default: "1.1"))
 
-#let s = (s.methods.info)(
-  self: s,
-  title: [Title],
-  subtitle: [Subtitle],
-  author: [Authors],
-  date: datetime.today(),
-  institution: [Institution],
-)
+#title-slide()
 
-#let (init, slides, touying-outline, alert, speaker-note) = utils.methods(s)
-#show: init
-
-#show strong: alert
-
-#let (slide, empty-slide, title-slide, new-section-slide, focus-slide) = utils.slides(s)
-#show: slides
+#outline-slide()
 
 = Section A
 
@@ -80,16 +75,4 @@
   #meanwhile
   
   Meanwhile, #pause we can also use `#meanwhile` to #pause display other content synchronously.
-]
-
-// appendix by freezing last-slide-number
-#let s = (s.methods.appendix)(self: s)
-#let (slide, empty-slide) = utils.slides(s)
-
-= Appendix
-
-=== Appendix
-
-#slide[
-  Please pay attention to the current slide number.
 ]
